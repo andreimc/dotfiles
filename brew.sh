@@ -21,14 +21,12 @@ brew install gnu-sed --with-default-names
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
-brew install bash
-brew tap homebrew/versions
-brew install bash-completion2
+brew install zsh
 
 # Switch to using brew-installed bash as default shell
-if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
-  echo '/usr/local/bin/bash' | sudo tee -a /etc/shells;
-  chsh -s /usr/local/bin/bash;
+if ! fgrep -q "$HOME/homebrew/bin/zsh" /etc/shells; then
+  echo "$HOME/homebrew/bin/zsh" | sudo tee -a /etc/shells;
+  chsh -s $HOME/homebrew/bin/zsh;
 fi;
 
 # Install `wget` with IRI support.
@@ -41,11 +39,11 @@ brew install ringojs
 brew install narwhal
 
 # Install more recent versions of some macOS tools.
-brew install vim --override-system-vi
+#brew install vim --override-system-vi
+brew install python
+brew install neovim/neovim/neovim
 brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
-brew install homebrew/dupes/screen
-brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
@@ -76,13 +74,34 @@ brew install tcpflow
 brew install tcpreplay
 brew install tcptrace
 brew install ucspi-tcp # `tcpserver` etc.
-brew install xpdf
 brew install xz
 
 # Install other useful binaries.
-brew install ack
+brew install pt
+brew install the_silver_searcher
 brew install dark-mode
+brew install dnsmasq
+brew install jq
+
+# Install tmux and friends
+brew install nvm
+brew install kubectl
+brew install rbenv
+brew install reattach-to-user-namespace
+brew install tmux
+
+brew install tig
+
+brew tap caskroom/fonts
+brew cask install font-inconsolata-g-for-powerline
+brew cask install flux
+brew cask install karabiner
+brew cask install sizeup
+brew cask install istat-menus
+
+
 #brew install exiv2
+brew install gpg
 brew install git
 brew install git-lfs
 brew install imagemagick --with-webp
@@ -103,3 +122,9 @@ brew install zopfli
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+rbenv install 2.3.3
+
+source ~/.zshrc
+
+gem install hub tmuxinator --no-rdoc --no-ri

@@ -7,12 +7,18 @@ git pull origin master;
 function doIt() {
 	rsync --exclude ".git/" \
 		--exclude ".DS_Store" \
-		--exclude ".osx" \
 		--exclude "bootstrap.sh" \
+		--exclude "brew.sh" \
 		--exclude "README.md" \
 		--exclude "LICENSE-MIT.txt" \
 		-avh --no-perms . ~;
-	source ~/.bash_profile;
+	source ~/.zshrc;
+	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+	git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
+	~/.scm_breeze/install.sh
+
+	git clone  https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -25,3 +31,5 @@ else
 	fi;
 fi;
 unset doIt;
+
+mkdir ~/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/homebrew

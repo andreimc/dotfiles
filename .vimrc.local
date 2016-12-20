@@ -1,0 +1,137 @@
+set nocursorline " don't highlight current line
+autocmd VimEnter * if !argc() | NERDTree | endif
+
+" Evaluate Clojure buffers on load
+autocmd BufRead,BufNewFile *.cljs setlocal filetype=clojure
+autocmd BufRead *.clj try | silent! Require | catch /^Fireplace/ | endtry
+autocmd BufRead *.cljs try | silent! Require | catch /^Fireplace/ | endtry
+
+" Clojure static
+let g:clojure_maxlines = 100
+
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^render', '^apply' ]
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+
+let g:clojure_special_indent_words = 'deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+
+let g:clojure_align_multiline_strings = 1
+let g:clojure_align_subforms = 1
+
+nnoremap <Space> <Nop>
+let maplocalleader=" "
+
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 24
+let g:rbpt_loadcmd_toggle = 0
+
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
+
+" diable error bells
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+" keyboard shortcuts
+inoremap jj <ESC>
+
+" highlight search
+"set hlsearch
+"nmap <leader>hl :let @/ = ""<CR>
+
+" gui settings
+if (&t_Co == 256 || has('gui_running'))
+  if ($TERM_PROGRAM == 'iTerm.app')
+    colorscheme solarized
+  else
+    colorscheme desert
+  endif
+endif
+set guioptions-=T
+let mapleader = ","
+"let g:Tb_UseSingleClick = 1
+""let g:Tb_ModSelTarget = 1
+"let g:Tb_MaxSize = 0
+"set vb
+
+"" vim-airline
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'kolor'
+
+if has("gui_macvim") && has("gui_running") || getcwd() =~ "new_projects"
+ autocmd VimEnter * NERDTree
+ autocmd VimEnter * wincmd p
+endif
+
+set hidden
+
+" Mouse
+set mouse=a
+
+" YankRing
+nnoremap <silent> <F4> :YRShow<CR>·
+
+" Jsx stuff
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+let g:syntastic_javascript_checkers = ['eslint']
+
+" retain the visual selection after having pressed > or <
+vnoremap > >gv
+:vnoremap < <gv
+
+let g:no_turbux_mappings = 1
+map <leader>f <Plug>SendTestToTmux
+map <leader>s <Plug>SendFocusedTestToTmux
+map <leader>l <Plug>SendFocusedTestToTmux
+
+let g:turbux_runner  = 'vimux'
+
+set clipboard+=unnamed
+
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_dont_split = 'NERD_tree_2'
+
+vmap <Leader>z :call I18nTranslateString()<CR>
+
+" Buffer navigation
+map gn :BF<cr>
+map gp :BB<cr>
+nnoremap <F2> :set invpaste paste?<CR>
+set pastetoggle=<F2>
+set showmode
+" Disambiguate ,a & ,t from the Align plugin, making them fast again.
+"
+" This section is here to prevent AlignMaps from adding a bunch of mappings
+" that interfere with the very-common ,a and ,t mappings. This will get run
+" at every startup to remove the AlignMaps for the *next* vim startup.
+"
+" If you do want the AlignMaps mappings, remove this section, remove
+" ~/.vim/bundle/Align, and re-run rake in maximum-awesome.
+function! s:RemoveConflictingAlignMaps()
+  if exists("g:loaded_AlignMapsPlugin")
+    AlignMapsClean
+  endif
+endfunction
+command! -nargs=0 RemoveConflictingAlignMaps call s:RemoveConflictingAlignMaps()
+silent! autocmd VimEnter * RemoveConflictingAlignMaps
