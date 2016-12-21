@@ -89,8 +89,12 @@ brew install kubectl
 brew install rbenv
 brew install reattach-to-user-namespace
 brew install tmux
+brew install choppsv1/term24/emacs-mac
 
 brew install tig
+
+brew install terraform
+brew install ansible
 
 brew tap caskroom/fonts
 brew cask install font-inconsolata-g-for-powerline
@@ -125,6 +129,8 @@ brew cleanup
 
 rbenv install 2.3.3
 
-source ~/.zshrc
+rbenv global 2.3.3
+
+rbenv rehash
 
 gem install hub tmuxinator --no-rdoc --no-ri

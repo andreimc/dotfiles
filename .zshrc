@@ -48,13 +48,15 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export PATH=$HOME/bin:$HOME/homebrew/bin:$PATH
+# User configuration
+export RBENV_ROOT=$HOME/.rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 plugins=(tmux git rbenv bundler rails zsh-syntax-highlighting docker docker-compose terraform)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-export RBENV_ROOT=$HOME/.rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
@@ -81,6 +83,12 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+for file in ~/.{path,exports,aliases,functions,extra}; do
+	[ -r "$file" ] && [ -f "$file" ] && source "$file";
+done;
+unset file;
+
 alias tsj="tmuxinator projects"
 alias tsh="tmuxinator personal"
 alias tsg="tmuxinator go_jora"

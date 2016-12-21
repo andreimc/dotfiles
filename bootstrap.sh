@@ -18,7 +18,7 @@ function doIt() {
 	git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
 	~/.scm_breeze/install.sh
 
-	git clone  https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
