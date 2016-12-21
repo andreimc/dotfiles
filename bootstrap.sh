@@ -19,10 +19,10 @@ function doIt() {
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
   fi
 
-	if [[ ! -x ~/.scm_breeze ]]; then
-  	git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
-  	~/.scm_breeze/install.sh
-	fi
+  if [[ ! -x ~/.scm_breeze ]]; then
+    git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
+    ~/.scm_breeze/install.sh
+  fi
 
   if [[ ! -x ~/.local/share/nvim/site/autoload/plug.vim ]]; then
     curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
@@ -34,10 +34,14 @@ function doIt() {
     curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
   fi
 
-	if [[ ! -x ~/.oh-my-zsh/themes/dracula.zsh-theme ]]; then
-	curl -fLo ~/.oh-my-zsh/themes/dracula.zsh-theme \
-		https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme
-	fi
+  if [[ ! -x ~/.oh-my-zsh/themes/dracula.zsh-theme ]]; then
+    curl -fLo ~/.oh-my-zsh/themes/dracula.zsh-theme \
+      https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme
+  fi
+
+  mkdir ~/personal
+  mkdir ~/projects
+  mkdir ~/.gopath/src/github.com/jobseekerltd
 
 }
 

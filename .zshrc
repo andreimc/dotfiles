@@ -48,7 +48,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export GOPATH=~/.gopath
-export PATH=$HOME/bin:$HOME/.homebrew/bin:$GOPATH/bin:$PATH
+export PATH=$HOME/bin:$HOME/.homebrew/bin:$PATH
 export ITERM_24BIT=1
 
 export JAVA_HOME=$(/usr/libexec/java_home)
@@ -130,3 +130,5 @@ compdef _tmuxinator tmuxinator mux
 
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
+
+source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

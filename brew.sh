@@ -80,6 +80,7 @@ brew install --HEAD neovim
 
 # Install other useful binaries.
 #brew install pt
+brew install zsh-syntax-highlighting
 brew install the_silver_searcher
 # brew install dark-mode
 # brew install dnsmasq
@@ -97,11 +98,11 @@ brew install tig
 brew install terraform
 brew install ansible
 
-brew tap caskroom/fonts
+brew cask install 1password
+brew cask install alfred
 brew cask install appzapper
 brew cask install font-inconsolata-g-for-powerline
 brew cask install flux
-brew cask install karabiner
 brew cask install sizeup
 brew cask install istat-menus
 brew cask install spotify
@@ -110,12 +111,15 @@ brew cask install docker
 brew cask install caffeine
 brew cask install dash
 brew cask install google-chrome
-brew cask install google-erive
-brew cask install iterm
+brew cask install google-drive
+brew cask install iterm2
+brew cask install polymail
+brew cask install santa
 brew cask install skype
 brew cask install slack
 brew cask install virtualbox
 brew cask install whatsapp
+
 #brew install exiv2
 brew install gpg
 brew install git
@@ -149,3 +153,5 @@ gem install hub tmuxinator --no-rdoc --no-ri
 
 pip3 install --upgrade pip
 pip3 install --upgrade neovim
+
+nvm install 7.3.0
