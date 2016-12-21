@@ -19,6 +19,13 @@ function doIt() {
 	~/.scm_breeze/install.sh
 
 	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+	if [[ ! -x ~/.homebrew/bin/brew ]]; then
+		mkdir -p ~/.homebrew
+		curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+	fi
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then
@@ -31,5 +38,3 @@ else
 	fi;
 fi;
 unset doIt;
-
-mkdir ~/homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/homebrew

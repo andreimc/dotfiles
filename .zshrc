@@ -47,7 +47,12 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-export PATH=$HOME/bin:$HOME/homebrew/bin:$PATH
+export GOPATH=~/.gopath
+export PATH=$HOME/bin:$HOME/.homebrew/bin:$GOPATH/bin:$PATH
+export ITERM_24BIT=1
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+
 # User configuration
 export RBENV_ROOT=$HOME/.rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
@@ -99,12 +104,6 @@ alias dockrm='eval "$(docker rm $(docker ps -a -q))"'
 alias dockrmi='eval "$(docker rmi $(docker images -q))"'
 export EDITOR=vim
 source ~/.scm_breeze/scm_breeze.sh
-
-export ITERM_24BIT=1
-
-export JAVA_HOME=$(/usr/libexec/java_home)
-export GOPATH=~/.gopath
-export PATH=$PATH:$GOPATH/bin
 
 _tmuxinator() {
   local commands projects
