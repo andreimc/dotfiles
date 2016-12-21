@@ -91,12 +91,9 @@ brew install nvm
 brew install kubectl
 brew install rbenv
 brew install reattach-to-user-namespace
-brew install tmux
-
-brew install tig
-
 brew install terraform
-brew install ansible
+brew install tig
+brew install tmux
 
 brew cask install 1password
 brew cask install alfred
@@ -148,9 +145,12 @@ rbenv global 2.3.3
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-gem install hub tmuxinator --no-rdoc --no-ri
+gem install hub tmuxinator neovim --no-rdoc --no-ri
 
+pip2 install --upgrade pip
+pip2 install --upgrade neovim
 pip3 install --upgrade pip
 pip3 install --upgrade neovim
+pip install --user ansible
 
 nvm install 7.3.0
