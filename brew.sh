@@ -105,7 +105,6 @@ brew cask install font-inconsolata-g-for-powerline
 brew cask install flux
 brew cask install sizeup
 brew cask install istat-menus
-brew cask install spotify
 brew cask install java
 brew cask install docker
 brew cask install caffeine
@@ -114,9 +113,9 @@ brew cask install google-chrome
 brew cask install google-drive
 brew cask install iterm2
 brew cask install polymail
-brew cask install santa
 brew cask install skype
 brew cask install slack
+brew cask install spotify
 brew cask install virtualbox
 brew cask install whatsapp
 
