@@ -4,7 +4,10 @@ set nocompatible
 " enable syntax highlighting
 syntax enable
 
-call plug#begin('~/.vim/plugged')
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+
+call plug#begin('~/.nvim/plugged')
 
 " install Vundle bundles
 if filereadable(expand("~/.vimrc.bundles"))
@@ -51,7 +54,7 @@ if exists('$TMUX')  " Support resizing in tmux
 endif
 
 " keyboard shortcuts
-let mapleader = ','
+let mapleader = "\<Space>"
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k

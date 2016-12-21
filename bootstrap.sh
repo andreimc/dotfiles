@@ -5,27 +5,40 @@ cd "$(dirname "${BASH_SOURCE}")";
 git pull origin master;
 
 function doIt() {
-	rsync --exclude ".git/" \
-		--exclude ".DS_Store" \
-		--exclude "bootstrap.sh" \
-		--exclude "brew.sh" \
-		--exclude "README.md" \
-		--exclude "LICENSE-MIT.txt" \
-		-avh --no-perms . ~;
-	source ~/.zshrc;
-	sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  rsync --exclude ".git/" \
+    --exclude ".DS_Store" \
+    --exclude "bootstrap.sh" \
+    --exclude "brew.sh" \
+		--exclude ".spacemacs" \
+    --exclude "README.md" \
+    --exclude "LICENSE-MIT.txt" \
+    -avh --no-perms . ~;
+  source ~/.zshrc;
 
-	git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
-	~/.scm_breeze/install.sh
+  if [[ ! -x ~/.oh-my-zsh ]]; then
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  fi
 
-	git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-
-	if [[ ! -x ~/.homebrew/bin/brew ]]; then
-		mkdir -p ~/.homebrew
-		curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+	if [[ ! -x ~/.scm_breeze ]]; then
+  	git clone git://github.com/andreimc/scm_breeze.git ~/.scm_breeze
+  	~/.scm_breeze/install.sh
 	fi
+
+  if [[ ! -x ~/.local/share/nvim/site/autoload/plug.vim ]]; then
+    curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+      https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  fi
+
+  if [[ ! -x ~/.homebrew/bin/brew ]]; then
+    mkdir -p ~/.homebrew
+    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+  fi
+
+	if [[ ! -x ~/.oh-my-zsh/themes/dracula.zsh-theme ]]; then
+	curl -fLo ~/.oh-my-zsh/themes/dracula.zsh-theme \
+		https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme
+	fi
+
 }
 
 if [ "$1" == "--force" -o "$1" == "-f" ]; then

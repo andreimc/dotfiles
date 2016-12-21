@@ -61,19 +61,15 @@ inoremap jj <ESC>
 "nmap <leader>hl :let @/ = ""<CR>
 
 " gui settings
+set termguicolors
 if (&t_Co == 256 || has('gui_running'))
   if ($TERM_PROGRAM == 'iTerm.app')
-    colorscheme solarized
+    colorscheme dracula
   else
     colorscheme desert
   endif
 endif
 set guioptions-=T
-let mapleader = ","
-"let g:Tb_UseSingleClick = 1
-""let g:Tb_ModSelTarget = 1
-"let g:Tb_MaxSize = 0
-"set vb
 
 "" vim-airline
 let g:airline_powerline_fonts = 1
