@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-alias vim="nvim"
-alias vi="nvim"
+alias vi='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
+alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

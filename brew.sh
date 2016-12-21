@@ -42,7 +42,8 @@ fi;
 #brew install vim --override-system-vi
 brew install python
 brew install python3
-brew install neovim/neovim/neovim
+brew tap neovim/neovim
+brew install --HEAD neovim
 #brew install homebrew/dupes/grep
 #brew install homebrew/dupes/openssh
 
@@ -78,7 +79,7 @@ brew install neovim/neovim/neovim
 # brew install xz
 
 # Install other useful binaries.
-brew install pt
+#brew install pt
 brew install the_silver_searcher
 # brew install dark-mode
 # brew install dnsmasq
@@ -90,7 +91,6 @@ brew install kubectl
 brew install rbenv
 brew install reattach-to-user-namespace
 brew install tmux
-brew install choppsv1/term24/emacs
 
 brew install tig
 
@@ -120,7 +120,7 @@ brew cask install whatsapp
 brew install gpg
 brew install git
 brew install git-lfs
-brew install imagemagick --with-webp
+# brew install imagemagick --with-webp
 # brew install lua
 # brew install lynx
 # brew install p7zip
@@ -147,6 +147,5 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 gem install hub tmuxinator --no-rdoc --no-ri
 
-
-pip3 install --upgrade pi
+pip3 install --upgrade pip
 pip3 install --upgrade neovim
