@@ -42,7 +42,7 @@ function doIt() {
 
   mkdir ~/personal
   mkdir ~/projects
-  mkdir ~/.gopath/src/github.com/jobseekerltd
+  mkdir -p ~/.gopath/src/github.com/jobseekerltd
 
 }
 

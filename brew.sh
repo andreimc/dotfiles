@@ -4,19 +4,12 @@
 
 ./install/get_hosts.sh
 
-brew update
-
-brew upgrade
-
-brew cleanup
-
-brew install parallel
-brew tap caskroom/versions
+./install/brew_prepare.sh
 
 ./install/zsh_install.sh
 
 cat ./install/cask_install.sh | parallel -j10
-cat ./install/brew_packages.sh | parallel -j10
+./install/brew_packages.sh
 
 rbenv install 2.3.3
 

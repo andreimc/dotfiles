@@ -9,6 +9,7 @@ brew cask install sizeup
 brew cask install intellij-idea-ce
 brew cask install istat-menus
 brew cask install java
+brew cask install dropbox
 brew cask install docker
 brew cask install caffeine
 brew cask install dash
