@@ -2,6 +2,8 @@
 
 # Install command-line tools using Homebrew.
 
+./install/get_hosts.sh
+
 brew update
 
 brew upgrade
