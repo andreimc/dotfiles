@@ -18,3 +18,4 @@ brew install tmux
 brew install gpg
 brew install git
 brew install git-lfs
+brew install --devel hub

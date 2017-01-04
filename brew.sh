@@ -17,7 +17,7 @@ rbenv global 2.3.3
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-gem install hub tmuxinator neovim --no-rdoc --no-ri
+gem install tmuxinator neovim --no-rdoc --no-ri
 
 pip2 install --upgrade pip
 pip2 install --upgrade neovim
