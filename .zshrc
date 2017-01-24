@@ -139,3 +139,7 @@ source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if command_exists kubectl ; then
   source <(kubectl completion zsh)
 fi
+
+if command_exists kops ; then
+  source <(kops completion zsh)
+fi
