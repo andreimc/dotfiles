@@ -128,6 +128,10 @@ _tmuxinator() {
 
 compdef _tmuxinator tmuxinator mux
 
+command_exists () {
+    type "$1" &> /dev/null ;
+}
+
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
@@ -152,3 +156,6 @@ add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
 source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+if command_exists kubectl ; then
+  source <(kubectl completion zsh)
+fi
