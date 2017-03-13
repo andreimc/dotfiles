@@ -159,3 +159,6 @@ source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 if command_exists kubectl ; then
   source <(kubectl completion zsh)
 fi
+export ANDROID_HOME=${HOME}/.homebrew/opt/android-sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
