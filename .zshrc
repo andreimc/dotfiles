@@ -97,6 +97,7 @@ unset file;
 alias tsj="tmuxinator projects"
 alias tsh="tmuxinator personal"
 alias tsg="tmuxinator go_jora"
+alias tsa="tmuxinator go_andreimc"
 
 eval "$(hub alias -s)"
 
