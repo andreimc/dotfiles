@@ -1,0 +1,9 @@
+name: <%= @args[0] %>
+root: ~/.gopath/src/github.com/andreimc/<%= @args[0] %>
+windows:
+  - code:
+      layout: even-vertical
+      panes:
+        - vi
+        -
+
