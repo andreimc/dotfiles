@@ -48,6 +48,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export GOPATH=~/.gopath
+export PATH=$GOPATH/bin:$PATH
 export PATH=$HOME/bin:$HOME/.homebrew/bin:$PATH
 export ITERM_24BIT=1
 
@@ -111,6 +112,7 @@ _tmuxinator() {
   projects=(${(f)"$(ls ~/projects)"})
   personal=(${(f)"$(ls ~/personal)"})
   go_jora=(${(f)"$(ls $GOPATH/src/github.com/jobseekerltd)"})
+  go_andreimc=(${(f)"$(ls $GOPATH/src/github.com/andreimc)"})
 
   case $words[2] in
     projects)
@@ -118,6 +120,9 @@ _tmuxinator() {
       ;;
     go_jora)
       _describe -t projects "tmuxinator go_jora" go_jora && return 0
+      ;;
+    go_andreimc)
+      _describe -t projects "tmuxinator go_andreimc" go_andreimc && return 0
       ;;
     personal)
       _describe -t personal "tmuxinator personal" personal && return 0
