@@ -22,3 +22,5 @@ brew cask install slack
 brew cask install spotify
 brew cask install virtualbox
 brew cask install whatsapp
+brew cask install visual-studio-code
+brew cask install graphiql
