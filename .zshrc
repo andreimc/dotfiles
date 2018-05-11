@@ -48,7 +48,8 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 export GOPATH=~/.gopath
-export PATH=$GOPATH/bin:$PATH
+export GOBIN=$GOPATH/bin
+export PATH=$GOBIN:$PATH
 export PATH=$HOME/bin:$HOME/.homebrew/bin:$PATH
 export ITERM_24BIT=1
 
