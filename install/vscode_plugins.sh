@@ -20,6 +20,8 @@ code --install-extension sammkj.vscode-elixir-formatter
 code --install-extension redhat.vscode-yaml
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
 code --install-extension shan.code-settings-sync
-code --install-extension peterjausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
 code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code --install-extension redhat.vscode-yaml
+code --install-extension msjsdiag.debugger-for-chrome
+code --install-extension davidanson.vscode-markdownlint
