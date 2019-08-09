@@ -180,3 +180,9 @@
 [url "git://gist.github.com/"]
 
 	insteadOf = "gist:"
+[gpg]
+        program = gpg
+[user]
+        name = Andrei
+        email = lusu777@gmail.com
+        signingkey = 8CDC2CF68AEB60D3
