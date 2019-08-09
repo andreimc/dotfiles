@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -59,6 +59,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 plugins=(git docker docker-compose terraform)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/templates/zshrc.zsh-template
 
 autoload -U promptinit; promptinit
 prompt pure
@@ -102,7 +103,7 @@ alias dockrmi='eval "$(docker rmi $(docker images -q))"'
 
 export EDITOR=vim
 source ~/.scm_breeze/scm_breeze.sh
-source ~/.oh-my-zsh/templates/zshrc.zsh-template
+
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
