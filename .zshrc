@@ -47,7 +47,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 export GOPATH=~/.gopath
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$GOBIN:$PATH
 export ITERM_24BIT=1
 
 # export JAVA_HOME=$(/usr/libexec/java_home)
