@@ -102,6 +102,7 @@ alias dockrmi='eval "$(docker rmi $(docker images -q))"'
 
 export EDITOR=vim
 source ~/.scm_breeze/scm_breeze.sh
+source ~/.oh-my-zsh/templates/zshrc.zsh-template
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
