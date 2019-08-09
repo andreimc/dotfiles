@@ -1,13 +1,11 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-eval $(ssh-agent) > /dev/null
-
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="dracula"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -50,19 +48,20 @@ ENABLE_CORRECTION="true"
 export GOPATH=~/.gopath
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
-export PATH=$HOME/bin:$HOME/.homebrew/bin:$PATH
 export ITERM_24BIT=1
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+# export JAVA_HOME=$(/usr/libexec/java_home)
 
 # User configuration
 export RBENV_ROOT=$HOME/.rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
-plugins=(tmux git rbenv bundler rails zsh-syntax-highlighting docker docker-compose terraform)
+plugins=(git docker docker-compose terraform)
 
 source $ZSH/oh-my-zsh.sh
 
+autoload -U promptinit; promptinit
+prompt pure
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -96,49 +95,17 @@ for file in ~/.{path,exports,aliases,functions,extra}; do
 done;
 unset file;
 
-alias tsj="tmuxinator projects"
-alias tsh="tmuxinator personal"
-alias tsg="tmuxinator go_jora"
-alias tsa="tmuxinator go_andreimc"
-
 eval "$(hub alias -s)"
 
 alias dockrm='eval "$(docker rm $(docker ps -a -q))"'
 alias dockrmi='eval "$(docker rmi $(docker images -q))"'
+
 export EDITOR=vim
 source ~/.scm_breeze/scm_breeze.sh
 
-_tmuxinator() {
-  local commands projects
-  projects=(${(f)"$(ls ~/projects)"})
-  personal=(${(f)"$(ls ~/personal)"})
-  go_jora=(${(f)"$(ls $GOPATH/src/github.com/jobseekerltd)"})
-  go_andreimc=(${(f)"$(ls $GOPATH/src/github.com/andreimc)"})
-
-  case $words[2] in
-    projects)
-      _describe -t projects "tmuxinator projects" projects && return 0
-      ;;
-    go_jora)
-      _describe -t projects "tmuxinator go_jora" go_jora && return 0
-      ;;
-    go_andreimc)
-      _describe -t projects "tmuxinator go_andreimc" go_andreimc && return 0
-      ;;
-    personal)
-      _describe -t personal "tmuxinator personal" personal && return 0
-    ;;
-  esac
-
-  return
-}
-
-compdef _tmuxinator tmuxinator mux
-
-command_exists () {
-    type "$1" &> /dev/null ;
-}
-
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 export NVM_DIR="$HOME/.nvm"
 . "$(brew --prefix nvm)/nvm.sh"
 
@@ -162,10 +129,13 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-source ~/.homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+command_exists () {
+  type "$1" &> /dev/null ;
+}
+
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ 
 if command_exists kubectl ; then
   source <(kubectl completion zsh)
 fi
-export ANDROID_HOME=${HOME}/.homebrew/opt/android-sdk
-export PATH=${PATH}:${ANDROID_HOME}/tools
-export PATH=${PATH}:${ANDROID_HOME}/platform-tools

@@ -9,7 +9,6 @@ function doIt() {
     --exclude ".DS_Store" \
     --exclude "bootstrap.sh" \
     --exclude "brew.sh" \
-    --exclude ".spacemacs" \
     --exclude "install" \
     --exclude "README.md" \
     --exclude "LICENSE-MIT.txt" \
@@ -30,20 +29,14 @@ function doIt() {
       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   fi
 
-  if [[ ! -x ~/.homebrew/bin/brew ]]; then
-    mkdir -p ~/.homebrew
-    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
-  fi
+  # if [[ ! -x ~/.homebrew/bin/brew ]]; then
+  #   mkdir -p ~/.homebrew
+  #   curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ~/.homebrew
+  # fi
 
-  if [[ ! -x ~/.oh-my-zsh/themes/dracula.zsh-theme ]]; then
-    curl -fLo ~/.oh-my-zsh/themes/dracula.zsh-theme \
-      https://raw.githubusercontent.com/dracula/zsh/master/dracula.zsh-theme
-  fi
 
   mkdir ~/personal
   mkdir ~/projects
-  mkdir -p ~/.gopath/src/github.com/jobseekerltd
-  mkdir -p ~/.gopath/src/github.com/andreimc
 
 }
 

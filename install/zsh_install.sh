@@ -3,8 +3,8 @@
 brew install zsh
 
 # Switch to using brew-installed bash as default shell
-if ! fgrep -q "$HOME/.homebrew/bin/zsh" /etc/shells; then
-  echo "$HOME/.homebrew/bin/zsh" | sudo tee -a /etc/shells;
-  chsh -s $HOME/.homebrew/bin/zsh;
+if ! fgrep -q "/usr/local/bin/zsh" /etc/shells; then
+  echo "/usr/local/bin/zsh" | sudo tee -a /etc/shells;
+  chsh -s /usr/local/bin/zsh;
 fi;
 
