@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-brew install gnu-sed --with-default-names
 brew install golang
 brew install python
 brew install python3
