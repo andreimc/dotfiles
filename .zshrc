@@ -47,7 +47,7 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 export GOPATH=~/.gopath
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
+export PATH=$(brew --prefix coreutils)/libexec/gnubin:$GOBIN:$PATH
 export ITERM_24BIT=1
 
 # export JAVA_HOME=$(/usr/libexec/java_home)
@@ -102,6 +102,7 @@ alias dockrmi='eval "$(docker rmi $(docker images -q))"'
 
 export EDITOR=vim
 source ~/.scm_breeze/scm_breeze.sh
+source ~/.oh-my-zsh/templates/zshrc.zsh-template
 
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
