@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-brew cask install 1password
+brew cask install 1password6
 brew cask install alfred
 brew cask install appzapper
 brew cask install font-inconsolata-g-for-powerline
@@ -16,8 +16,7 @@ brew cask install polymail
 brew cask install slack
 brew cask install spotify
 brew cask install virtualbox
-brew cask install whatsapp
 brew cask install visual-studio-code
 brew cask install karabiner-elements
 brew cask install zoom
-brew install awscli
+brew cask install transmission-nightly   

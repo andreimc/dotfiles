@@ -4,7 +4,7 @@ brew upgrade
 brew cleanup
 
 brew tap caskroom/cask
-brew tap caskroom/versions
+
 brew tap caskroom/fonts
 
 # Save Homebrew’s installed location.
