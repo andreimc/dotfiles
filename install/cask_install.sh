@@ -18,5 +18,5 @@ brew cask install spotify
 brew cask install virtualbox
 brew cask install visual-studio-code
 brew cask install karabiner-elements
-brew cask install zoom
+brew cask install zoomus
 brew cask install transmission-nightly   
