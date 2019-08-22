@@ -25,3 +25,4 @@ code --install-extension ms-vscode.vscode-typescript-tslint-plugin
 code --install-extension redhat.vscode-yaml
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension davidanson.vscode-markdownlint
+code --install-extension esbenp.prettier-vscode
