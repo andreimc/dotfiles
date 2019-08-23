@@ -26,3 +26,5 @@ code --install-extension redhat.vscode-yaml
 code --install-extension msjsdiag.debugger-for-chrome
 code --install-extension davidanson.vscode-markdownlint
 code --install-extension esbenp.prettier-vscode
+code --install-extension jpoissonnier.vscode-styled-components
+code --install-extension dbaeumer.vscode-eslint
