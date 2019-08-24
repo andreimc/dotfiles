@@ -2,9 +2,9 @@
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
 	"editor.tabSize": 2,
   "editor.insertSpaces": true,
-   "eslint.validate": [ 
-      "javascript", 
-      "javascriptreact", 
+   "eslint.validate": [
+      "javascript",
+      "javascriptreact",
       { "language": "typescript", "autoFix": true },
       { "language": "typescriptreact", "autoFix": true }
       ],
@@ -41,6 +41,7 @@
 	"vim.incsearch": true,
 	"vim.useCtrlKeys": true,
 	"vim.hlsearch": true,
+  "vim.useSystemClipboard": true,
 	"vim.insertModeKeyBindings": [
 		{
 			"before": [
