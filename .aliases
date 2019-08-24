@@ -4,7 +4,7 @@ alias vi='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias vim='NVIM_TUI_ENABLE_TRUE_COLOR=1 nvim'
 alias yumdb='docker-compose exec localdb psql -U postgres -d mryum_dev'
 alias yumdropdb='docker-compose exec localdb dropdb -U postgres -d mryum_dev'
-alias yumcreatedb='docker-compose exec localdb dropdb -U postgres -d mryum_dev
+alias yumcreatedb='docker-compose exec localdb dropdb -U postgres -d mryum_dev'
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."

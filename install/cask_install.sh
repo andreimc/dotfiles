@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+brew tap homebrew/cask-versions
 
 brew cask install 1password6
 brew cask install alfred
@@ -19,4 +20,5 @@ brew cask install virtualbox
 brew cask install visual-studio-code
 brew cask install karabiner-elements
 brew cask install zoomus
-brew cask install transmission-nightly   
+brew cask install transmission-nightly
+brew cask install sail
