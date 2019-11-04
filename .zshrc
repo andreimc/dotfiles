@@ -49,11 +49,11 @@ export GOPATH=~/.gopath
 export GOBIN=$GOPATH/bin
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$GOBIN:$PATH
 export ITERM_24BIT=1
+export PATH="$PATH:$HOME/development/flutter/bin"
 
 # export JAVA_HOME=$(/usr/libexec/java_home)
 
 # User configuration
-export RBENV_ROOT=$HOME/.rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 plugins=(git docker docker-compose terraform)
@@ -137,7 +137,7 @@ command_exists () {
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
- 
+
 if command_exists kubectl ; then
   source <(kubectl completion zsh)
 fi
