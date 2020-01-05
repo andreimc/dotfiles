@@ -21,7 +21,7 @@ brew install git-lfs
 brew install wget
 brew install awscli
 brew install pinentry-mac
-brew isntall kubernetes-helm
+brew install kubernetes-helm
 
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 killall gpg-agent
