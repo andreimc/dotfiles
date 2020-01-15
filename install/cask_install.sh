@@ -22,3 +22,5 @@ brew cask install karabiner-elements
 brew cask install zoomus
 brew cask install transmission-nightly
 brew cask install sail
+brew cask install android-sdk
+brew cask install android-ndk
