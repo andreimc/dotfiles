@@ -22,6 +22,11 @@ brew install wget
 brew install awscli
 brew install pinentry-mac
 brew install kubernetes-helm
+brew install ant
+brew install maven
+brew install gradle
+brew install android-sdk
+brew install android-ndk
 
 echo "pinentry-program /usr/local/bin/pinentry-mac" >> ~/.gnupg/gpg-agent.conf
 killall gpg-agent
