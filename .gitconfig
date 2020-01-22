@@ -188,6 +188,6 @@
 [gpg]
         program = gpg
 [user]
-        name = Andrei
+        name = Andrei Miulescu
         email = lusu777@gmail.com
         signingkey = 7577ABFA2A21348E5982059F9EF912F3EFBC6794
